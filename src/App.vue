@@ -12,6 +12,7 @@
 <script>
   import HeaderComponent from './components/HeaderComponent.vue';
   import SongSection from './components/SongsSectionComponent.vue';
+  
   export default {
   name: 'App',
   
@@ -32,5 +33,8 @@
   -moz-osx-font-smoothing: grayscale;
 }
 </style>
+    
   
 
+  
+      

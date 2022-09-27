@@ -1,5 +1,8 @@
 <template>
   <section id="songs"> <!-- Contenitore delle cards -->
+    <div class="search-container">
+        <SelectComponent @select="selectGenre" />
+    </div>
     <div class="container">
         <CardComponent v-for="song, i in songs" :key="song" 
         :coverUrl = songs[i].poster
@@ -13,15 +16,22 @@
 <script>
 import axios from "axios";
 import CardComponent from './CardComponent.vue';
+import SelectComponent from "./SelectComponent.vue";
 
 export default {
     name: 'SongSection',
    components: {
-    CardComponent
-   },
+    CardComponent,
+    SelectComponent
+    },
     data() {
         return {
             songs: []
+        }
+    },
+    methods: {
+        selectGenre(searched) {
+            console.log(searched);
         }
     },
     created() {
@@ -52,8 +62,10 @@ export default {
         flex-wrap: wrap;
     }
 }
+.search-container {
+    margin-bottom: 2rem;
+    width: 60%;
+    margin: 0 auto;
+    padding-left: 1rem;
+}
 </style>
-        
-        
-        
-        
