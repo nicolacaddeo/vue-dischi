@@ -14,7 +14,7 @@ export default {
         coverUrl: String,
         songTitle: String,
         artist: String,
-        year: Number
+        year: String
     }
 }
 </script>
