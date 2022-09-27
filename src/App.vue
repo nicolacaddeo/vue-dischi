@@ -3,17 +3,21 @@
     <header>
       <HeaderComponent />
     </header>
-
+    <main>
+      <SongSection />
+    </main>
   </div>
 </template>
 
 <script>
   import HeaderComponent from './components/HeaderComponent.vue';
-
+  import SongSection from './components/SongsSectionComponent.vue';
   export default {
   name: 'App',
+  
   components: {
-    HeaderComponent
+    HeaderComponent,
+    SongSection
   }
 }
 </script>
