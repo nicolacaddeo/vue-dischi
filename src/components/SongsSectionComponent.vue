@@ -30,8 +30,15 @@ export default {
         }
     },
     methods: {
-        selectGenre(searched) {
-            console.log(searched);
+        selectGenre(selectedGenre) {
+            console.log(selectedGenre);
+            const newArray = [];
+            this.songs.forEach((item)=> {
+                if(item.genre.indexOf(selectedGenre) > -1) {
+                    newArray.push(item);
+                }
+            })
+            this.songs = newArray;
         }
     },
     created() {

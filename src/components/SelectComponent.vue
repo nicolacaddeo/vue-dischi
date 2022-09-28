@@ -3,10 +3,10 @@
         <label for="select-genre">Seleziona un genere:</label>
         <select id="select-genre" v-model="searchedGenre" @change="$emit('select', searchedGenre)">
             <option value="none"> - </option>
-            <option value="rock">Rock</option>
-            <option value="pop">Pop</option>
-            <option value="jazz">Jazz</option>
-            <option value="metal">Metal</option>
+            <option value="Rock">Rock</option>
+            <option value="Pop">Pop</option>
+            <option value="Jazz">Jazz</option>
+            <option value="Metal">Metal</option>
         </select>
         
     </div>
