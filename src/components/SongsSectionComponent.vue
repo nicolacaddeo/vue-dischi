@@ -4,11 +4,11 @@
         <SelectComponent @select="selectGenre" />
     </div>
     <div class="container">
-        <CardComponent v-for="song, i in songs" :key="song" 
-        :coverUrl = songs[i].poster
-        :songTitle = songs[i].title 
-        :artist = songs[i].author
-        :year = songs[i].year />
+        <CardComponent v-for="song, i in genreToDisplay" :key="song" 
+        :coverUrl = genreToDisplay[i].poster
+        :songTitle = genreToDisplay[i].title 
+        :artist = genreToDisplay[i].author
+        :year = genreToDisplay[i].year />
     </div>
   </section>
 </template>
@@ -26,7 +26,8 @@ export default {
     },
     data() {
         return {
-            songs: []
+            songs: [],
+            genreToDisplay: []
         }
     },
     methods: {
@@ -38,7 +39,7 @@ export default {
                     newArray.push(item);
                 }
             })
-            this.songs = newArray;
+            this.genreToDisplay = newArray;
         }
     },
     created() {
@@ -46,6 +47,7 @@ export default {
         .then(({status, data})=> {
             if (status === 200) {
                 this.songs = data.response;
+                this.genreToDisplay = data.response;
                 console.log('songs e\' uguale a:', this.songs);
             }
         })
